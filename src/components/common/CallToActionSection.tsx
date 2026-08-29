@@ -1,0 +1,9 @@
+import { ArrowUpRight, Mail } from 'lucide-react'
+import { profile } from '../../data/profile'
+import { socialLinks } from '../../data/socialLinks'
+
+const githubLink = socialLinks.find((link) => link.kind === 'github')
+
+export function CallToActionSection() {
+  return <section className="border-t border-[var(--color-line)] py-20 sm:py-28" aria-labelledby="cta-heading"><div className="mx-auto flex w-[min(100%-2rem,72rem)] flex-col items-start justify-between gap-8 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6 sm:p-10 lg:flex-row lg:items-center"><div><p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-accent)]">Next step</p><h2 id="cta-heading" className="m-0 text-3xl font-semibold tracking-[-0.045em] text-[var(--color-ink)] sm:text-4xl">Let&apos;s build something great.</h2><p className="mt-4 mb-0 max-w-xl text-base leading-7 text-[var(--color-muted)]">Have a project, product, or engineering challenge in mind? Reach out through GitHub or email at {profile.email}.</p></div><div className="flex w-full flex-wrap gap-3 lg:w-auto lg:shrink-0">{githubLink ? <a className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] px-4 py-2.5 text-sm font-semibold text-[var(--color-on-accent)] no-underline transition-transform hover:-translate-y-0.5 hover:bg-[var(--color-accent-strong)]" href={githubLink.url} target="_blank" rel="noreferrer">View GitHub <ArrowUpRight aria-hidden="true" size={17} /></a> : null}<a className="inline-flex items-center gap-2 rounded-lg border border-[var(--color-line)] px-4 py-2.5 text-sm font-semibold text-[var(--color-ink)] no-underline transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]" href={`mailto:${profile.email}`}>Contact Me <Mail aria-hidden="true" size={17} /></a></div></div></section>
+}

@@ -1,15 +1,15 @@
-import { Boxes, Code2, Database, Wrench } from 'lucide-react'
+import { Code2, Database, Layers3, LayoutTemplate, Rocket, Users } from 'lucide-react'
 import { skills } from '../../data/skills'
 import type { SkillCategory } from '../../types/portfolio'
 import { SkillCard } from '../ui/SkillCard'
 
 const skillGroups: readonly { category: SkillCategory; title: string; icon: typeof Code2 }[] = [
   { category: 'backend', title: 'Backend', icon: Code2 },
-  { category: 'frontend', title: 'Frontend', icon: Boxes },
+  { category: 'frontend', title: 'Frontend', icon: LayoutTemplate },
   { category: 'databases-messaging', title: 'Databases & Messaging', icon: Database },
-  { category: 'architecture-tools', title: 'Architecture & Tools', icon: Wrench },
-  { category: 'devops-tools', title: 'DevOps / Tools', icon: Wrench },
-  { category: 'soft-skills', title: 'Soft Skills', icon: Boxes },
+  { category: 'architecture-tools', title: 'Architecture & Tools', icon: Layers3 },
+  { category: 'devops-tools', title: 'DevOps / Tools', icon: Rocket },
+  { category: 'soft-skills', title: 'Soft Skills', icon: Users },
 ]
 
 export function SkillsSection() {

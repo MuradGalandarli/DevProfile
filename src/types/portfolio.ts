@@ -24,7 +24,6 @@ export type Skill = {
   name: string
   category: SkillCategory
   description: string
-  tags?: readonly string[]
 }
 
 export type Experience = {

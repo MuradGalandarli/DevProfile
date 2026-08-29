@@ -3,7 +3,9 @@ import { aboutContent } from '../../data/about'
 import { skills } from '../../data/skills'
 
 const areaIcons = [Layers3, MonitorSmartphone, Boxes, Database] as const
-const highlightedSkills = skills.filter((skill) => ['backend', 'frontend', 'databases-messaging'].includes(skill.category)).slice(0, 8)
+
+const highlightedNames = ['C#', 'ASP.NET Core', 'REST API', 'EF Core', 'PostgreSQL', 'React', 'TypeScript', 'Redux Toolkit']
+const highlightedSkills = highlightedNames.map((name) => skills.find((skill) => skill.name === name)).filter((skill): skill is NonNullable<typeof skill> => Boolean(skill))
 
 export function AboutSection() {
   return (

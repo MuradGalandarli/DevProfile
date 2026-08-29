@@ -19,7 +19,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <span className="relative mt-6 inline-flex rounded-full border border-[var(--color-line)] bg-[var(--color-canvas)]/80 px-3 py-1 text-xs font-medium text-[var(--color-ink)]">{categoryLabels[project.category]}</span>
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-start justify-between gap-3"><h3 className="m-0 text-xl font-semibold tracking-[-0.03em] text-[var(--color-ink)]">{project.title}</h3><span className="shrink-0 text-xs text-[var(--color-muted)]">{project.period}</span></div>
+        <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-start sm:gap-3"><h3 className="m-0 min-w-0 text-xl font-semibold tracking-[-0.03em] text-[var(--color-ink)]">{project.title}</h3><span className="text-xs text-[var(--color-muted)] sm:shrink-0">{project.period}</span></div>
         <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">{project.shortDescription}</p>
         <ul className="mt-5 flex flex-wrap gap-1.5 p-0" aria-label={`${project.title} technologies`}>
           {project.technologies.map((technology) => <li key={technology} className="list-none rounded-md border border-[var(--color-line)] px-2 py-1 text-xs text-[var(--color-muted)]">{technology}</li>)}
